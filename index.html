@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.png">
+    <!--<link rel="icon" href="http://example.com/favicon.png">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            margin: 60px;
+        }
+
+        #main {
+            height: 540px;
+            width: 780px;
+            background-color: #2F3C7E;
+            border-radius: 40px;
+        }
+
+        input {
+            width: 21%;
+            height: 80px;
+            font-size: 50px;
+            margin: 10px;
+            border-radius: 100px;
+            box-shadow: 2px;
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+        input:hover {
+            background-color: #FBEAEB;
+            text-shadow: 2px 2px 3px grey;
+            transition: 0.0s all;
+            border: 0px groover;
+            -webkit-transform: translate(0px, -1px);
+            transform: translate(0, -1px);
+
+            -webkit-box-show: 0px 10px 5px rgba(0, 0, 0, 0.50);
+            -moz-box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.50);
+            box-shadow: :0px 10px 5px rgba(0, 0, 0, 0.50);
+            < !--border: 10px;
+            -->
+        }
+        
+
+        #t {
+            width: 94%;
+            height: 100px;
+            background-color: #FBEAEB;
+            font-size: 80px;
+            margin: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="main">
+            <form name="frm">
+                <input type="text" name="txtbox" id="t" placeholder="0"><br>
+                <input type="button" value="1" onclick="frm.txtbox.value+=1">
+                <input type="button" value="2" onclick="frm.txtbox.value+=2">
+                <input type="button" value="3" onclick="frm.txtbox.value+=3">
+                <input type="button" value="+" onclick="add()">
+                <br>
+                <input type="button" value="4" onclick="frm.txtbox.value+=4">
+                <input type="button" value="5" onclick="frm.txtbox.value+=5">
+                <input type="button" value="6" onclick="frm.txtbox.value+=6">
+                <input type="button" value="-" onclick="sub()">
+                <br>
+                <input type="button" value="7" onclick="frm.txtbox.value+=7">
+                <input type="button" value="8" onclick="frm.txtbox.value+=8">
+                <input type="button" value="9" onclick="frm.txtbox.value+=9">
+                <input type="button" value="/" onclick="div()">
+                <br>
+                <input type="button" value="C" onclick="frm.txtbox.value=''">
+                <input type="button" value="0" onclick="frm.txtbox.value+=0">
+                <input type="button" value="=" onclick="frm.txtbox.value=eval(frm.txtbox.value)">
+                <input type="button" value="X" onclick="mul()">
+            </form>
+        </div>
+    </center>
+    <script>
+        function add() {
+            var exp = 0, t = 0;
+            exp = frm.txtbox.value;
+            t = exp.charAt(exp.length - 1);
+            //alert(t);
+            if (t == '+' || t == '-' || t == '*' || t == '/') {
+                frm.txtbox.value = exp.substring(0, exp.length - 1);
+                frm.txtbox.value += '+';
+            }
+            else
+                frm.txtbox.value += '+';
+        }
+        function sub() {
+            var exp = 0, t = 0;
+            exp = frm.txtbox.value;
+            t = exp.charAt(exp.length - 1);
+            //alert(t);
+            if (t == '+' || t == '-' || t == '*' || t == '/') {
+                frm.txtbox.value = exp.substring(0, exp.length - 1);
+                frm.txtbox.value += '-';
+            }
+            else
+                frm.txtbox.value += '-';
+        }
+        function mul() {
+            var exp = 0, t = 0;
+            exp = frm.txtbox.value;
+            t = exp.charAt(exp.length - 1);
+            //alert(t);
+            if (t == '+' || t == '-' || t == '*' || t == '/') {
+                frm.txtbox.value = exp.substring(0, exp.length - 1);
+                frm.txtbox.value += '*';
+            }
+            else
+                frm.txtbox.value += '*';
+        }
+        function div() {
+            var exp = 0, t = 0;
+            exp = frm.txtbox.value;
+            t = exp.charAt(exp.length - 1);
+            //alert(t);
+            if (t == '+' || t == '-' || t == '*' || t == '/') {
+                frm.txtbox.value = exp.substring(0, exp.length - 1);
+                frm.txtbox.value += '/';
+            }
+            else
+                frm.txtbox.value += '/';
+        }
+    </script>
+</body>
+
+</html>
